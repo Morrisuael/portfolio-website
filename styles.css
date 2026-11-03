@@ -1,5 +1,5 @@
 :root {
-    color-scheme: light;
+    color-scheme: dark;
     --page: #050d1c;
     --surface: #071326;
     --surface-raised: #0a1a31;
@@ -312,6 +312,7 @@ h2 span {
     width: min(310px, 70%);
     aspect-ratio: 1;
     place-items: center;
+    overflow: hidden;
     border: 2px solid transparent;
     border-radius: 50%;
     background: linear-gradient(var(--page), var(--page)) padding-box, linear-gradient(140deg, #298ff5, #744bff) border-box;
@@ -323,6 +324,7 @@ h2 span {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     border-radius: inherit;
 }
 
