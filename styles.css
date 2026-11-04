@@ -441,6 +441,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 37px;
+    gap: 2px;
 }
 
 .quality-item {
@@ -1068,7 +1069,7 @@ h2 {
     font-size: 14px;
 }
 
-.contact-footer i {
+#contact-footer-icon{
     position: absolute;
     width: 35px;
     height: 2px;
@@ -1587,6 +1588,12 @@ body {
     }
 
     .qualities {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: center;
+        gap: 3px;
+        margin-top: 37px;
         margin-top: 26px;
     }
 
@@ -2145,6 +2152,14 @@ body {
         font-size: 11px;
     }
 }
+
+@media (max-width: 320px) {
+    .skills-section .learning-note {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 
 @media (max-width: 760px) {
     .site-header {
