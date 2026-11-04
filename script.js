@@ -56,31 +56,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 pageSections.forEach((section) => sectionObserver.observe(section));
 
-document.querySelector('.download-button').addEventListener('click', () => {
-  const cvText = [
-    'Vincent Adeloye',
-    'Front End Developer',
-    'Kwara, Nigeria',
-    'morrisuae1552@gmail.com',
-    '',
-    'PROFILE',
-    'Beginner front-end developer focused on clean, responsive, user-friendly websites.',
-    '',
-    'SKILLS',
-    'HTML, CSS, JavaScript, Responsive Design, Basic Git and GitHub',
-    '',
-    'PROJECTS',
-    'To-Do List, Currency Converter, Portfolio Website, KagalariMart'
-  ].join('\n');
-  const file = new Blob([cvText], { type: 'text/plain' });
-  const url = URL.createObjectURL(file);
-  const downloadLink = document.createElement('a');
-  downloadLink.href = url;
-  downloadLink.download = 'vincent-adeloye-cv.txt';
-  downloadLink.click();
-  URL.revokeObjectURL(url);
-});
-
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   if (!contactForm.reportValidity()) return;
