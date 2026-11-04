@@ -58,9 +58,9 @@ pageSections.forEach((section) => sectionObserver.observe(section));
 
 document.querySelector('.download-button').addEventListener('click', () => {
   const cvText = [
-    'Vincent Adewale',
+    'Vincent Adeloye',
     'Front End Developer',
-    'Lagos, Nigeria',
+    'Kwara, Nigeria',
     'morrisuae1552@gmail.com',
     '',
     'PROFILE',
@@ -76,7 +76,7 @@ document.querySelector('.download-button').addEventListener('click', () => {
   const url = URL.createObjectURL(file);
   const downloadLink = document.createElement('a');
   downloadLink.href = url;
-  downloadLink.download = 'vincent-adewale-cv.txt';
+  downloadLink.download = 'vincent-adeloye-cv.txt';
   downloadLink.click();
   URL.revokeObjectURL(url);
 });
