@@ -39,7 +39,7 @@ body::before {
     z-index: -1;
     content: "";
     pointer-events: none;
-    background: radial-gradient(ellipse at 86% 16%, rgba(35, 83, 175, .1), transparent 35%), linear-gradient(130deg, transparent 70%, rgba(17, 47, 105, .08));
+    background: var(--page);
 }
 
 a {
@@ -82,14 +82,11 @@ textarea:focus-visible {
 
 .wordmark {
     width: fit-content;
-    color: var(--text);
+    color: #58aaff;
     font-size: 27px;
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0;
-    background: linear-gradient(110deg, #f3f6ff 25%, #4daaff 78%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .main-nav {
@@ -116,7 +113,7 @@ textarea:focus-visible {
     left: 0;
     height: 2px;
     content: "";
-    background: linear-gradient(90deg, var(--blue), var(--violet));
+    background: var(--blue);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .2s ease;
@@ -177,6 +174,17 @@ textarea:focus-visible {
     margin-inline: auto;
 }
 
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .hero {
     position: relative;
     display: grid;
@@ -200,7 +208,7 @@ textarea:focus-visible {
     right: -9vw;
     width: 40%;
     height: 95%;
-    background: linear-gradient(136deg, transparent 0 47%, rgba(24, 66, 144, .12) 48% 58%, transparent 59% 69%, rgba(47, 87, 206, .15) 70% 82%, transparent 83%);
+    /* background: rgba(24, 66, 144, .12); */
 }
 
 .hero::after {
@@ -208,7 +216,7 @@ textarea:focus-visible {
     bottom: 0;
     width: 40vw;
     height: 45%;
-    background: linear-gradient(135deg, transparent 48%, rgba(20, 66, 159, .25) 49% 67%, transparent 68%);
+    /* background: rgba(20, 66, 159, .18); */
 }
 
 .eyebrow {
@@ -265,7 +273,7 @@ h2 span {
 }
 
 .button-primary {
-    background: linear-gradient(105deg, #278eee, #7548f2);
+    background: #278eee;
     box-shadow: 0 8px 22px rgba(45, 98, 229, .2);
 }
 
@@ -312,9 +320,9 @@ h2 span {
     width: min(310px, 70%);
     aspect-ratio: 1;
     overflow: hidden;
-    border: 2px solid transparent;
+    border: 2px solid #298ff5;
     border-radius: 50%;
-    background: linear-gradient(var(--page), var(--page)) padding-box, linear-gradient(140deg, #298ff5, #744bff) border-box;
+    background: var(--page);
     box-shadow: 0 0 38px rgba(46, 99, 231, .09);
 }
 
@@ -594,7 +602,7 @@ h2 {
     max-width: none;
     width: 100%;
     padding-inline: max(calc((100vw - 1120px) / 2), 32px);
-    background: linear-gradient(90deg, rgba(10, 28, 54, .16), transparent 56%);
+    background: var(--surface);
 }
 
 .skills-section>.section-heading,
@@ -693,7 +701,7 @@ h2 {
     padding: 16px 21px;
     border: 1px solid rgba(67, 82, 178, .44);
     border-radius: 7px;
-    background: linear-gradient(105deg, rgba(23, 58, 117, .55), rgba(38, 31, 100, .55));
+    background: rgba(23, 58, 117, .55);
 }
 
 .code-badge {
@@ -761,7 +769,7 @@ h2 {
     overflow: hidden;
     border: 1px solid rgba(48, 89, 143, .75);
     border-radius: 5px;
-    background: linear-gradient(145deg, #102b4b, #071629);
+    background: #102b4b;
 }
 
 .project-image {
@@ -1074,7 +1082,7 @@ h2 {
     width: 35px;
     height: 2px;
     margin-top: 39px;
-    background: linear-gradient(90deg, var(--blue), var(--violet));
+    background: var(--blue);
 }
 
 .contact-footer .fa-paper-plane {
@@ -1083,7 +1091,6 @@ h2 {
     height: 2px;
     margin-top: -10px;
     /* margin-right: 40px; */
-    /* background: linear-gradient(90deg, var(--blue), var(--violet)); */
 }
 
 .site-footer {
@@ -1117,7 +1124,7 @@ body.light-theme {
 }
 
 body.light-theme::before {
-    background: radial-gradient(ellipse at 86% 16%, rgba(74, 145, 224, .1), transparent 36%), linear-gradient(130deg, transparent 70%, rgba(78, 124, 191, .07));
+    background: var(--page);
 }
 
 .light-theme .site-header {
@@ -1126,8 +1133,7 @@ body.light-theme::before {
 }
 
 .light-theme .wordmark {
-    background-image: linear-gradient(110deg, #18385f 25%, #287dd0 78%);
-    background-clip: text;
+    color: #18385f;
 }
 
 .light-theme .nav-link:hover {
@@ -1318,7 +1324,7 @@ body {
 
 .light-theme .code-badge {
     border: 1px solid rgba(67, 82, 178, .44);
-    background: linear-gradient(105deg, rgba(23, 58, 117, .55), rgba(38, 31, 100, .55));
+    background: rgba(23, 58, 117, .55);
 }
 
 .light-theme .site-footer>a:last-child,
@@ -1374,7 +1380,8 @@ body {
 }
 
 .light-theme .portrait-wrap {
-    background: linear-gradient(var(--page), var(--page)) padding-box, linear-gradient(140deg, #298ff5, #744bff) border-box;
+    border-color: #298ff5;
+    background: var(--page);
 }
 
 .light-theme .icon-button .moon-icon {
@@ -1713,6 +1720,12 @@ body {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
 

@@ -56,6 +56,28 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 pageSections.forEach((section) => sectionObserver.observe(section));
 
+const initializeScrollReveal = () => {
+  const sectionsToReveal = document.querySelectorAll('main > section');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1 });
+
+  sectionsToReveal.forEach((section) => {
+    section.classList.add('scroll-reveal');
+    revealObserver.observe(section);
+  });
+};
+
+initializeScrollReveal();
+
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   if (!contactForm.reportValidity()) return;
